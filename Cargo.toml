@@ -10,6 +10,7 @@ branch = "bitvm"
 [patch.crates-io.bitcoin]
 git = "https://github.com/rust-bitcoin/rust-bitcoin"
 branch = "bitvm"
+features = ["rand-std", "serde"]
 
 [patch.crates-io.bitcoin_hashes]
 git = "https://github.com/rust-bitcoin/rust-bitcoin"
