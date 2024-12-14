@@ -1,8 +1,8 @@
 use crate::builder::{Block, StructuredScript};
 use bitcoin::blockdata::opcodes::Opcode;
-use bitcoin::blockdata::script::{read_scriptint, Instruction};
+use bitcoin::blockdata::script::Instruction;
 use bitcoin::opcodes::all::*;
-use bitcoin::script::PushBytes;
+use bitcoin::script::{PushBytes, ScriptExt};
 use std::borrow::BorrowMut;
 use std::cmp::min;
 use std::panic;
@@ -176,7 +176,7 @@ impl StackAnalyzer {
 
     pub fn handle_push_slice(&mut self, bytes: &PushBytes) {
         self.debug_position += bytes.len() + 1;
-        if let Ok(x) = read_scriptint(bytes.as_bytes()) {
+        if let Ok(x) = bytes.read_scriptint() {
             // if i64(data) < 1000, last_constant is true
             if (0..=1000).contains(&x) {
                 self.last_constant = Some(x);

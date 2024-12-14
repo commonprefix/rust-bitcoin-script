@@ -3,7 +3,7 @@ members = [
     "macro",
 ]
 
-[patch.crates-io.base58check]
+[patch.crates-io.base58ck]
 git = "https://github.com/storopoli/rust-bitcoin"
 branch = "bitvm"
 
@@ -28,6 +28,9 @@ branch = "bitvm"
 git = "https://github.com/storopoli/rust-bitcoin"
 branch = "bitvm"
 
+[patch.crates-io.bitcoin-primitives]
+git = "https://github.com/storopoli/rust-bitcoin"
+branch = "bitvm"
 
 [package]
 name = "bitcoin-script"

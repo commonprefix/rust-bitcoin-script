@@ -2,7 +2,7 @@ use bitcoin::blockdata::opcodes::Opcode;
 use bitcoin::blockdata::script::{Instruction, PushBytes, PushBytesBuf, ScriptBuf};
 use bitcoin::opcodes::all::{OP_ENDIF, OP_IF, OP_NOTIF};
 use bitcoin::opcodes::{OP_0, OP_TRUE};
-use bitcoin::script::write_scriptint;
+use bitcoin::script::{write_scriptint, ScriptBufExt, ScriptExt};
 use bitcoin::Witness;
 use std::cmp::min;
 use std::collections::HashMap;
@@ -72,13 +72,11 @@ impl StructuredScript {
     pub fn add_structured_script(&mut self, id: u64, script: StructuredScript) {
         self.script_map.entry(id).or_insert(script);
     }
-    
+
     pub fn get_structured_script(&self, id: &u64) -> &StructuredScript {
-        self.script_map.get(id)
-            .expect(&format!(
-                "script id: {} not found in script_map.",
-                id
-            ))
+        self.script_map
+            .get(id)
+            .expect(&format!("script id: {} not found in script_map.", id))
     }
 
     pub fn contains_flow_op(&self) -> bool {
