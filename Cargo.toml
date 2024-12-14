@@ -4,32 +4,32 @@ members = [
 ]
 
 [patch.crates-io.base58ck]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [patch.crates-io.bitcoin]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 features = ["rand-std", "serde"]
 
 [patch.crates-io.bitcoin_hashes]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [patch.crates-io.bitcoin-internals]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [patch.crates-io.bitcoin-io]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [patch.crates-io.bitcoin-units]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [patch.crates-io.bitcoin-primitives]
-git = "https://github.com/storopoli/rust-bitcoin"
+git = "https://github.com/commonprefix/rust-bitcoin-storopoli"
 branch = "bitvm"
 
 [package]
@@ -42,7 +42,7 @@ license = "MIT"
 repository = "https://github.com/BitVM/rust-bitcoin-script"
 
 [dependencies]
-bitcoin = { git = "https://github.com/storopoli/rust-bitcoin", branch = "bitvm", features = ["rand-std", "serde"]}
+bitcoin = { git = "https://github.com/commonprefix/rust-bitcoin-storopoli", branch = "bitvm", features = ["rand-std", "serde"]}
 lazy_static = "1.5.0"
 script-macro = { path = "./macro" }
 stdext = "0.3.3"
